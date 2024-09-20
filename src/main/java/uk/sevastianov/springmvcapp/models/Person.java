@@ -8,13 +8,14 @@ public class Person {
     @NotEmpty(message = "Name couldn't be empty!")
     @Size(min = 2, max = 15, message = "Name length is not correct!")
     private String name;
+    @NotNull
     @Min(value = 0, message = "Age could not be negative!")
-    private int age;
+    private Integer age;
     @NotEmpty(message = "Email couldn't be empty!")
     @Email(message = "Email should be valid")
     private String email;
 
-    public Person(int id, String name, int age, String email) {
+    public Person(int id, String name, Integer age, String email) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -40,11 +41,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

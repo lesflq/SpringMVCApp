@@ -65,9 +65,9 @@ public class PeopleController {
         model.addAttribute("person", personDAO.show(id));
         return "people/edit";
     }
+
     @PostMapping("/{id}/edit")
-    public String update(@Valid @ModelAttribute("person") Person person,
-                         @PathVariable("id") int id, BindingResult bindingResult) {
+    public String update(@PathVariable("id") int id, @ModelAttribute("person") @Valid  Person person, BindingResult bindingResult) {
 
         System.out.println("Test 1");
         if(bindingResult.hasErrors()) {

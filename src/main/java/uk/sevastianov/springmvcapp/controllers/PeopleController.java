@@ -66,8 +66,8 @@ public class PeopleController {
         return "people/edit";
     }
     @PostMapping("/{id}/edit")
-    public String update(@Valid @ModelAttribute("person") Person person,
-                         @PathVariable("id") int id, BindingResult bindingResult) {
+    public String update(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult,
+                         @PathVariable("id") int id) {
 
         System.out.println("Test 1");
         if(bindingResult.hasErrors()) {
